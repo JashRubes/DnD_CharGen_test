@@ -1,6 +1,7 @@
 loadAllData().then(() => {
   // Populate dropdowns with names
   ['race', 'class', 'background', 'alignment'].forEach(field => {
+    console.log('Data loaded:', window.dataStore); // <-- debug line
     const select = document.getElementById(field + '-select');
     const dataArray = window.dataStore[field + 'sData'] || window.dataStore[field + 'Data']; // alignment is singular
     select.innerHTML = '';
