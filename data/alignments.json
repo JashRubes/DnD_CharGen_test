@@ -1,1 +1,27 @@
+[
+  {
+    "id": "fighter",
+    "name": "Fighter",
+    "hitDie": 10,
+    "babProgression": "full",
+    "saves": {
+      "fort": "good",
+      "ref": "poor",
+      "will": "poor"
+    },
+    "skillPoints": 2
+  },
+  {
+    "id": "wizard",
+    "name": "Wizard",
+    "hitDie": 4,
+    "babProgression": "half",
+    "saves": {
+      "fort": "poor",
+      "ref": "poor",
+      "will": "good"
+    },
+    "skillPoints": 2
+  }
+]
 
