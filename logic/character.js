@@ -1,4 +1,8 @@
 function randomChoice(array) {
+  if (!array || array.length === 0) {
+    console.warn('randomChoice called with empty or undefined array');
+    return null; // safe fallback
+  }
   return array[Math.floor(Math.random() * array.length)];
 }
 
@@ -32,8 +36,8 @@ function randomizeField(fieldName) {
   const dataKey = fieldToDataKey[fieldName];
   const optionsArray = window.dataStore[dataKey];
 
-  if (!optionsArray || optionsArray.length === 0) return; // skip if no data
-
   const choice = randomChoice(optionsArray);
+  if (!choice) return; // skip if no valid choice
+
   select.value = choice.id;
 }
