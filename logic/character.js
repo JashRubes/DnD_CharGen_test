@@ -24,13 +24,6 @@ function generateCharacterObject(options) {
   return { level, race, charClass, background, alignment };
 }
 
-const fieldToDataKey = {
-  race: 'racesData',
-  class: 'classesData',
-  background: 'backgroundsData',
-  alignment: 'alignmentsData'
-};
-
 function randomizeField(fieldName) {
   const select = document.getElementById(fieldName + '-select');
   const dataKey = fieldToDataKey[fieldName];
