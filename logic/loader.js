@@ -10,9 +10,9 @@ function loadJSON(name, file) {
 
 function loadAllData() {
   return Promise.all([
-    loadJSON('racesData', 'races.json'),
-    loadJSON('classesData', 'classes.json'),
-    loadJSON('backgroundsData', 'backgrounds.json'),
-    loadJSON('alignmentsData', 'alignments.json')
+    loadJSON('racesData', 'data/races.json'),
+    loadJSON('classesData', 'data/classes.json'),
+    loadJSON('backgroundsData', 'data/backgrounds.json'),
+    loadJSON('alignmentsData', 'data/alignments.json')
   ]);
 }
