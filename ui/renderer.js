@@ -1,11 +1,16 @@
-export function renderOptions(containerId, dataList, onClick) {
-    const container = document.getElementById(containerId);
-    container.innerHTML = "";
+function renderCharacter(character) {
+  const { level, race, charClass, background, alignment } = character;
 
-    dataList.forEach(item => {
-        const btn = document.createElement("button");
-        btn.textContent = item.name;
-        btn.onclick = () => onClick(item);
-        container.appendChild(btn);
-    });
+  document.getElementById('result').innerHTML = `
+    <h2>Your Character</h2>
+    <p><strong>Level:</strong> ${level}</p>
+    <p><strong>Race:</strong> ${race.name}</p>
+    <p><strong>Class:</strong> ${charClass.name}</p>
+    <p><strong>Hit Die:</strong> d${charClass.hitDie}</p>
+    <p><strong>BAB Progression:</strong> ${charClass.babProgression}</p>
+    <p><strong>Saves:</strong> Fort ${charClass.saves.fort}, Ref ${charClass.saves.ref}, Will ${charClass.saves.will}</p>
+    <p><strong>Skill Points:</strong> ${charClass.skillPoints}</p>
+    <p><strong>Background:</strong> ${background.name}</p>
+    <p><strong>Alignment:</strong> ${alignment.name}</p>
+  `;
 }
