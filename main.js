@@ -5,6 +5,23 @@ const fieldToDataKey = {
   alignment: 'alignmentsData'
 };
 
+// Helper to pick a random element from an array
+function randomChoice(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
+
+// Randomize a single field dropdown
+function randomizeField(field) {
+  const select = document.getElementById(field + '-select');
+  const dataKey = fieldToDataKey[field];
+  const dataArray = window.dataStore[dataKey];
+
+  if (!dataArray || dataArray.length === 0) return; // nothing to randomize
+
+  const choice = randomChoice(dataArray);
+  select.value = choice.id;
+}
+
 loadAllData().then(() => {
   ['race', 'class', 'background', 'alignment'].forEach(field => {
     const select = document.getElementById(field + '-select');
